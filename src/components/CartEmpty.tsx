@@ -3,13 +3,12 @@ import { Link } from 'react-router-dom';
 
 import emptyCartImg from '../assets/img/empty-cart.png';
 
-const CartEmpty = () => {
+const CartEmpty: React.FC = () => {
   return (
-    <>
       <div className="container container--cart">
         <div className="cart cart--empty">
           <h2>
-            Корзина пустая <icon>😕</icon>
+            Корзина пустая <b className='icon'>😕</b>
           </h2>
           <p>
             Вероятней всего, вы не заказывали ещё пиццу.
@@ -22,7 +21,6 @@ const CartEmpty = () => {
           </Link>
         </div>
       </div>
-    </>
   );
 };
 

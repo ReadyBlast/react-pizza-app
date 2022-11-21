@@ -18,6 +18,12 @@
     }
   }
 
+  &__link {
+     @media (max-width: 645px) {
+      margin-bottom: 20px;
+    }
+  }
+
   &__logo {
     display: flex;
 

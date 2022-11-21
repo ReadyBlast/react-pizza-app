@@ -2,13 +2,38 @@
 
 .sort {
   position: relative;
+
+  button {
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+    border: 1px solid #fe5f1e;
+    border-radius: 30px;
+    margin-right: 5px;
+    cursor: pointer;
+    background-color: white;
+    color: #fe5f1e;
+
+    &.active {
+      background-color: #fe5f1e;
+      color: white;
+    }
+
+    &.active:hover {
+      background-color: #ff4800;
+      color: white;
+    }
+
+    &:hover {
+      background-color: #ff7640;
+      color: white;
+    }
+  }
+
   &__label {
     display: flex;
     align-items: center;
-
-    svg {
-      margin-right: 8px;
-    }
 
     b {
       margin-right: 8px;
@@ -30,7 +55,6 @@
     border-radius: 10px;
     overflow: hidden;
     padding: 10px 0;
-    // width: 160px;
 
     ul {
       overflow: hidden;

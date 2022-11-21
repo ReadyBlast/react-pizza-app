@@ -1,16 +1,23 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { addItem } from '../../redux/slices/cartSlice';
+import { useSelector } from 'react-redux';
+import { addItem, selectCartItemByID } from '../../redux/slices/cartSlice';
+import { TPizzaDataType } from '../../redux/slices/pizzasSlice';
+import { useAppDispatch } from '../../redux/store';
 
 const typeNames = ['Тонкое', 'Традиционное'];
 
-function PizzaBlock({ id, title, price, imageUrl, sizes, types }) {
-  const cartItem = useSelector((state) =>
-    state.cart.items.find((obj) => obj.id === id)
-  );
-  const dispatch = useDispatch();
-  const [activeType, setActiveType] = useState(0);
-  const [activeSize, setActiveSize] = useState(0);
+const PizzaBlock: React.FC<TPizzaDataType> = ({
+  id,
+  title,
+  price,
+  imageUrl,
+  sizes,
+  types,
+}) => {
+  const cartItem = useSelector(selectCartItemByID(id));
+  const dispatch = useAppDispatch();
+  const [activeType, setActiveType] = useState<number>(types[0]);
+  const [activeSize, setActiveSize] = useState<number>(0);
 
   const addedItems = cartItem ? cartItem.count : 0;
 
@@ -62,12 +69,12 @@ function PizzaBlock({ id, title, price, imageUrl, sizes, types }) {
             onClick={onClickAdd}
           >
             <span>Добавить</span>
-            {addedItems > 0 && <i>{addedItems}</i>}
+            {addedItems !== undefined && addedItems > 0 && <i>{addedItems}</i>}
           </button>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default PizzaBlock;
