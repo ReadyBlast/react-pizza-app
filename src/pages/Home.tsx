@@ -111,8 +111,6 @@ const Home: React.FC = () => {
     <Skeleton key={index} />
   ));
 
-  console.log('rerender')
-
   return (
     <div className="container">
       <div className="content__top">
