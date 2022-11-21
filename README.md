@@ -4,8 +4,8 @@
 
 ## Полный стек приложения 
 
-ReactJS 18
-TypeScript
+- ReactJS 18
+- TypeScript
 Redux Toolkit (хранение данных / пицц)
 React Router v6 (навигация)
 Axios + Fetch (отправка запроса на бэкенд)
