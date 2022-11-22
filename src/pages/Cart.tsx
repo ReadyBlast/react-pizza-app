@@ -13,14 +13,14 @@ const Cart: React.FC = () => {
     return obj.count + sum;
   }, 0);
 
-    const onClickClear = () => {
-      if (window.confirm('Очистить корзину?')) {
-        dispatch(clearItems());
-      }
-    };
+  const onClickClear = () => {
+    if (window.confirm('Очистить корзину?')) {
+      dispatch(clearItems());
+    }
+  };
 
   if (!totalPrice) {
-    return <CartEmpty />
+    return <CartEmpty />;
   }
 
   return (
@@ -57,7 +57,7 @@ const Cart: React.FC = () => {
                 strokeLinejoin="round"
               />
             </svg>
-            Корзина
+            <p>Корзина</p>
           </h2>
           <div onClick={onClickClear} className="cart__clear">
             <svg
@@ -135,7 +135,12 @@ const Cart: React.FC = () => {
               </svg>
               <span>Вернуться назад</span>
             </Link>
-            <button className="button pay-btn" onClick={() => {alert('Спасибо что пользовались нашим приложением')}}>
+            <button
+              className="button pay-btn"
+              onClick={() => {
+                alert('Спасибо что пользовались нашим приложением');
+              }}
+            >
               <span>Оплатить сейчас</span>
             </button>
           </div>

@@ -136,6 +136,10 @@
     padding: 12px 25px;
     margin-left: 30px;
 
+    @media (max-width: 645px) {
+      margin: 0;
+    }
+
     svg {
       margin-right: 8px;
       margin-bottom: 1px;
